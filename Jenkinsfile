@@ -4,7 +4,12 @@ pipeline {
     stages {
         stage('Build Maven') {
             steps {
-		echo "hello world" 
+		script {
+		    M2_HOME='/opt/apache-maven-3.6.3'
+		    PATH="$M2_HOME/bin:$PATH"
+		    export PATH
+		    mvn install
+		} 
             }
         }
 	stage('Scan With Sonarqube') {

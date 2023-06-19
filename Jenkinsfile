@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build Maven') {
             steps {
-		echo "hello world" 
+		echo "helloooo world" 
             }
         }
 	stage('Scan With Sonarqube') {
